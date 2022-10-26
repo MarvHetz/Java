@@ -1,3 +1,5 @@
-public class Groesse {
+package klassen;
+public class Groesse
+{
   
 }

@@ -40,6 +40,7 @@ public class PizzaGUI
 	public PizzaGUI()
 	{
 		initialize();
+        list = new JList(controller.getWarenkorbDefaultListModel());
 
 	}
 
@@ -213,7 +214,6 @@ public class PizzaGUI
 	{
 		if (list == null)
 		{
-			list = new JList();
 			list.setBounds(10, 84, 315, 125);
 
 		}

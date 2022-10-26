@@ -1,3 +1,5 @@
-public class Extras {
+package klassen;
+public class Extras
+{
   
 }
