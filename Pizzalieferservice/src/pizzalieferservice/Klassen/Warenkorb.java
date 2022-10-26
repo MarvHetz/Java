@@ -3,7 +3,7 @@ public class Warenkorb {
   private Pizza pizza;
   private Groesse groesse;
   private Extras extras;
-  private double preis;
+  private double preis = 0;
 
     public Warenkorb()
     {

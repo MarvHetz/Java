@@ -33,6 +33,7 @@ public class PizzaGUI
 	private JLabel lblPreis;
 	private JLabel lblPreisGesamt;
 	private JList list;
+    private Controller controller;
 
 	/**
 	 * Create the application.
@@ -41,7 +42,7 @@ public class PizzaGUI
 	{
 		initialize();
         list = new JList(controller.getWarenkorbDefaultListModel());
-
+        controller = new Controller();
 	}
 
 	private JButton getBtnAdd()
@@ -215,7 +216,6 @@ public class PizzaGUI
 		if (list == null)
 		{
 			list.setBounds(10, 84, 315, 125);
-
 		}
 		return list;
 	}
