@@ -139,62 +139,42 @@ public class PizzaGUI
 		return lblFehler;
 	}
 
-	private JLabel getLblNewLabel()
+	private JLabel getLblPizza()
 	{
-		if (lblNewLabel == null)
+		if (lblPizza == null)
 		{
-			lblNewLabel = new JLabel("Pizza:");
-			lblNewLabel.setBounds(10, 11, 46, 14);
+			lblPizza = new JLabel("Pizza:");
+			lblPizza.setBounds(10, 11, 46, 14);
 		}
-		return lblNewLabel;
+		return lblPizza;
 	}
 
-	private JLabel getLblNewLabel_1()
+	private JLabel getLblExtras()
 	{
-		if (lblNewLabel_1 == null)
+		if (lblExtras == null)
 		{
-			lblNewLabel_1 = new JLabel("Extras:");
-			lblNewLabel_1.setBounds(10, 44, 46, 14);
+			lblExtras = new JLabel("Extras:");
+			lblExtras.setBounds(10, 44, 46, 14);
 		}
-		return lblNewLabel_1;
+		return lblExtras;
 	}
 
-	private JLabel getLblNewLabel_2()
+	private JLabel getLblGroesse()
 	{
-		if (lblNewLabel_2 == null)
+		if (lblGroesse() == null)
 		{
-			lblNewLabel_2 = new JLabel("Größe:");
-			lblNewLabel_2.setBounds(259, 11, 46, 14);
+			lblGroesse = new JLabel("Größe:");
+			lblGroesse.setBounds(259, 11, 46, 14);
 		}
-		return lblNewLabel_2;
-	}
-
-	private JLabel getLblNewLabel_3()
-	{
-		if (lblNewLabel_3 == null)
-		{
-			lblNewLabel_3 = new JLabel("Preis:");
-			lblNewLabel_3.setBounds(259, 44, 46, 14);
-		}
-		return lblNewLabel_3;
-	}
-
-	private JLabel getLblNewLabel_5()
-	{
-		if (lblNewLabel_5 == null)
-		{
-			lblNewLabel_5 = new JLabel("Gesamtpreis:");
-			lblNewLabel_5.setBounds(10, 225, 134, 14);
-		}
-		return lblNewLabel_5;
+		return lblGroesse;
 	}
 
 	private JLabel getLblPreis()
 	{
 		if (lblPreis == null)
 		{
-			lblPreis = new JLabel(" 0.0 €");
-			lblPreis.setBounds(332, 44, 46, 14);
+			lblPreis = new JLabel("Preis:");
+			lblPreis.setBounds(259, 44, 46, 14);
 		}
 		return lblPreis;
 	}
@@ -203,10 +183,30 @@ public class PizzaGUI
 	{
 		if (lblPreisGesamt == null)
 		{
-			lblPreisGesamt = new JLabel("New label");
-			lblPreisGesamt.setBounds(259, 225, 46, 14);
+			lblPreisGesamt = new JLabel("Gesamtpreis:");
+			lblPreisGesamt.setBounds(10, 225, 134, 14);
 		}
 		return lblPreisGesamt;
+	}
+
+	private JLabel getLblPreisAnzeigen()
+	{
+		if (lblPreisAnzeigen == null)
+		{
+			lblPreisAnzeigen = new JLabel(" 0.0 €");
+			lblPreisAnzeigen.setBounds(332, 44, 46, 14);
+		}
+		return lblPreisAnzeigen;
+	}
+
+	private JLabel getLblPreisGesamtAnzeigen()
+	{
+		if (lblPreisGesamtAnzeigen == null)
+		{
+			lblPreisGesamtAnzeigen = new JLabel("");
+			lblPreisGesamtAnzeigen.setBounds(259, 225, 46, 14);
+		}
+		return lblPreisGesamtAnzeigen;
 	}
 
 	private JList getList()
