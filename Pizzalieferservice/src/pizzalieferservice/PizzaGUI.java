@@ -124,14 +124,6 @@ public class PizzaGUI
 		if (comboBoxPizza == null)
 		{
 			comboBoxPizza = new JComboBox();
-			comboBoxPizza.addItemListener(new ItemListener()
-			{
-				@Override
-				public void itemStateChanged(ItemEvent e)
-				{
-
-				}
-			});
 			comboBoxPizza.setBounds(66, 7, 143, 22);
 		}
 		return comboBoxPizza;
