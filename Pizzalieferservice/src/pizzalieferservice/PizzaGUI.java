@@ -1,6 +1,6 @@
 package pizzalieferservice;
 
-import java.awt.EventQueue;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
@@ -23,17 +23,17 @@ public class PizzaGUI
 	private JComboBox comboBoxExtras;
 	private JComboBox comboBoxGroesse;
 	private JComboBox comboBoxPizza;
+	private Controller controller;
 	private JFrame frame;
+	private JLabel lblExtras;
 	private JLabel lblFehler;
-	private JLabel lblNewLabel;
-	private JLabel lblNewLabel_1;
-	private JLabel lblNewLabel_2;
-	private JLabel lblNewLabel_3;
-	private JLabel lblNewLabel_5;
+	private JLabel lblGroesse;
+	private JLabel lblPizza;
 	private JLabel lblPreis;
+	private JLabel lblPreisAnzeigen;
 	private JLabel lblPreisGesamt;
+	private JLabel lblPreisGesamtAnzeigen;
 	private JList list;
-    private Controller controller;
 
 	/**
 	 * Create the application.
@@ -41,8 +41,7 @@ public class PizzaGUI
 	public PizzaGUI()
 	{
 		initialize();
-        list = new JList(controller.getWarenkorbDefaultListModel());
-        controller = new Controller();
+		controller = new Controller();
 	}
 
 	private JButton getBtnAdd()
@@ -131,14 +130,34 @@ public class PizzaGUI
 		return comboBoxPizza;
 	}
 
+	private JLabel getLblExtras()
+	{
+		if (lblExtras == null)
+		{
+			lblExtras = new JLabel("Extras:");
+			lblExtras.setBounds(10, 44, 46, 14);
+		}
+		return lblExtras;
+	}
+
 	private JLabel getLblFehler()
 	{
 		if (lblFehler == null)
 		{
-			lblFehler = new JLabel("New label");
+			lblFehler = new JLabel("Hier werden Fehler angezeigt");
 			lblFehler.setBounds(10, 69, 315, 14);
 		}
 		return lblFehler;
+	}
+
+	private JLabel getLblGroesse()
+	{
+		if (lblGroesse == null)
+		{
+			lblGroesse = new JLabel("Größe:");
+			lblGroesse.setBounds(259, 11, 46, 14);
+		}
+		return lblGroesse;
 	}
 
 	private JLabel getLblPizza()
@@ -151,26 +170,6 @@ public class PizzaGUI
 		return lblPizza;
 	}
 
-	private JLabel getLblExtras()
-	{
-		if (lblExtras == null)
-		{
-			lblExtras = new JLabel("Extras:");
-			lblExtras.setBounds(10, 44, 46, 14);
-		}
-		return lblExtras;
-	}
-
-	private JLabel getLblGroesse()
-	{
-		if (lblGroesse() == null)
-		{
-			lblGroesse = new JLabel("Größe:");
-			lblGroesse.setBounds(259, 11, 46, 14);
-		}
-		return lblGroesse;
-	}
-
 	private JLabel getLblPreis()
 	{
 		if (lblPreis == null)
@@ -179,16 +178,6 @@ public class PizzaGUI
 			lblPreis.setBounds(259, 44, 46, 14);
 		}
 		return lblPreis;
-	}
-
-	private JLabel getLblPreisGesamt()
-	{
-		if (lblPreisGesamt == null)
-		{
-			lblPreisGesamt = new JLabel("Gesamtpreis:");
-			lblPreisGesamt.setBounds(10, 225, 134, 14);
-		}
-		return lblPreisGesamt;
 	}
 
 	private JLabel getLblPreisAnzeigen()
@@ -201,11 +190,21 @@ public class PizzaGUI
 		return lblPreisAnzeigen;
 	}
 
+	private JLabel getLblPreisGesamt()
+	{
+		if (lblPreisGesamt == null)
+		{
+			lblPreisGesamt = new JLabel("Gesamtpreis:");
+			lblPreisGesamt.setBounds(10, 225, 134, 14);
+		}
+		return lblPreisGesamt;
+	}
+
 	private JLabel getLblPreisGesamtAnzeigen()
 	{
 		if (lblPreisGesamtAnzeigen == null)
 		{
-			lblPreisGesamtAnzeigen = new JLabel("");
+			lblPreisGesamtAnzeigen = new JLabel("0.0 €");
 			lblPreisGesamtAnzeigen.setBounds(259, 225, 46, 14);
 		}
 		return lblPreisGesamtAnzeigen;
@@ -215,6 +214,7 @@ public class PizzaGUI
 	{
 		if (list == null)
 		{
+			list = new JList(controller.getWarenkorbDefaultListModel());
 			list.setBounds(10, 84, 315, 125);
 		}
 		return list;
@@ -226,45 +226,25 @@ public class PizzaGUI
 	private void initialize()
 	{
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(192, 192, 192));
 		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(getLblNewLabel());
-		frame.getContentPane().add(getLblNewLabel_1());
-		frame.getContentPane().add(getLblNewLabel_2());
-		frame.getContentPane().add(getLblNewLabel_3());
+		frame.getContentPane().add(getLblPizza());
+		frame.getContentPane().add(getLblGroesse());
+		frame.getContentPane().add(getLblExtras());
+		frame.getContentPane().add(getLblPreisAnzeigen());
 		frame.getContentPane().add(getLblPreis());
 		frame.getContentPane().add(getBtnAdd());
 		frame.getContentPane().add(getBtnRemove());
 		frame.getContentPane().add(getBtnOrder());
-		frame.getContentPane().add(getLblNewLabel_5());
+		frame.getContentPane().add(getLblPreisGesamtAnzeigen());
 		frame.getContentPane().add(getLblPreisGesamt());
 		frame.getContentPane().add(getComboBoxPizza());
 		frame.getContentPane().add(getComboBoxExtras());
 		frame.getContentPane().add(getComboBoxGroesse());
 		frame.getContentPane().add(getList());
 		frame.getContentPane().add(getLblFehler());
-	}
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args)
-	{
-		EventQueue.invokeLater(new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				try
-				{
-					PizzaGUI window = new PizzaGUI();
-					window.frame.setVisible(true);
-				} catch (Exception e)
-				{
-					e.printStackTrace();
-				}
-			}
-		});
+		frame.setVisible(true);
 	}
 }
