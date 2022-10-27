@@ -42,6 +42,6 @@ public class Controller
 	public void hinzufuegen(Pizza pizza, Extras extras, Groesse groesse)
 	{
 		double preis = berechnePreis(pizza, extras, groesse);
-		warenkorbDefaultListModel.add(new Warenkorb(pizza, extras, groesse, preis));
+		warenkorbDefaultListModel.add(new Warenkorb(pizza, groesse, extras, preis));
 	}
 }

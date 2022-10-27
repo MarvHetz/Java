@@ -40,8 +40,8 @@ public class PizzaGUI
 	 */
 	public PizzaGUI(Controller controller)
 	{
-		initialize();
 		this.controller = controller;
+		initialize();
 	}
 
 	private JButton getBtnAdd()
