@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -13,8 +14,19 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.WindowConstants;
 
+import pizzalieferservice.klassen.Warenkorb;
+
 public class PizzaGUI
 {
+
+	/**
+	 * Create the application.
+	 */
+	public PizzaGUI(Controller controller)
+	{
+		this.controller = controller;
+		initialize();
+	}
 
 	// uierhowieu
 	private JButton btnAdd;
@@ -33,16 +45,8 @@ public class PizzaGUI
 	private JLabel lblPreisAnzeigen;
 	private JLabel lblPreisGesamt;
 	private JLabel lblPreisGesamtAnzeigen;
-	private JList list;
 
-	/**
-	 * Create the application.
-	 */
-	public PizzaGUI(Controller controller)
-	{
-		this.controller = controller;
-		initialize();
-	}
+	private JList list;
 
 	private JButton getBtnAdd()
 	{
@@ -214,7 +218,7 @@ public class PizzaGUI
 	{
 		if (list == null)
 		{
-			list = new JList(controller.getWarenkorbDefaultListModel());
+			list = new JList();
 			list.setBounds(10, 84, 315, 125);
 		}
 		return list;
@@ -246,5 +250,10 @@ public class PizzaGUI
 		frame.getContentPane().add(getList());
 		frame.getContentPane().add(getLblFehler());
 		frame.setVisible(true);
+	}
+
+	public void setzeModels(DefaultListModel<Warenkorb> warenkorbDefaultListModel)
+	{
+		getList().setModel(warenkorbDefaultListModel);
 	}
 }
