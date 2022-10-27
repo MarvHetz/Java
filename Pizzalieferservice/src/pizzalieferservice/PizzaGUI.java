@@ -64,7 +64,7 @@ public class PizzaGUI
 		return btnAdd;
 	}
 
-	private JButton getBtnOrder()
+	protected JButton getBtnOrder()
 	{
 		if (btnOrder == null)
 		{
@@ -74,7 +74,7 @@ public class PizzaGUI
 		return btnOrder;
 	}
 
-	private JButton getBtnRemove()
+	protected JButton getBtnRemove()
 	{
 		if (btnRemove == null)
 		{
@@ -84,7 +84,7 @@ public class PizzaGUI
 		return btnRemove;
 	}
 
-	private JComboBox getComboBoxExtras()
+	protected JComboBox getComboBoxExtras()
 	{
 		if (comboBoxExtras == null)
 		{
@@ -102,7 +102,7 @@ public class PizzaGUI
 		return comboBoxExtras;
 	}
 
-	private JComboBox getComboBoxGroesse()
+	protected JComboBox getComboBoxGroesse()
 	{
 		if (comboBoxGroesse == null)
 		{
@@ -120,7 +120,7 @@ public class PizzaGUI
 		return comboBoxGroesse;
 	}
 
-	private JComboBox getComboBoxPizza()
+	protected JComboBox getComboBoxPizza()
 	{
 		if (comboBoxPizza == null)
 		{
@@ -130,7 +130,7 @@ public class PizzaGUI
 		return comboBoxPizza;
 	}
 
-	private JLabel getLblExtras()
+	protected JLabel getLblExtras()
 	{
 		if (lblExtras == null)
 		{
@@ -140,7 +140,7 @@ public class PizzaGUI
 		return lblExtras;
 	}
 
-	private JLabel getLblFehler()
+	protected JLabel getLblFehler()
 	{
 		if (lblFehler == null)
 		{
@@ -150,7 +150,7 @@ public class PizzaGUI
 		return lblFehler;
 	}
 
-	private JLabel getLblGroesse()
+	protected JLabel getLblGroesse()
 	{
 		if (lblGroesse == null)
 		{
@@ -160,7 +160,7 @@ public class PizzaGUI
 		return lblGroesse;
 	}
 
-	private JLabel getLblPizza()
+	protected JLabel getLblPizza()
 	{
 		if (lblPizza == null)
 		{
@@ -170,7 +170,7 @@ public class PizzaGUI
 		return lblPizza;
 	}
 
-	private JLabel getLblPreis()
+	protected JLabel getLblPreis()
 	{
 		if (lblPreis == null)
 		{
@@ -180,7 +180,7 @@ public class PizzaGUI
 		return lblPreis;
 	}
 
-	private JLabel getLblPreisAnzeigen()
+	protected JLabel getLblPreisAnzeigen()
 	{
 		if (lblPreisAnzeigen == null)
 		{
@@ -190,7 +190,7 @@ public class PizzaGUI
 		return lblPreisAnzeigen;
 	}
 
-	private JLabel getLblPreisGesamt()
+	protected JLabel getLblPreisGesamt()
 	{
 		if (lblPreisGesamt == null)
 		{
@@ -200,7 +200,7 @@ public class PizzaGUI
 		return lblPreisGesamt;
 	}
 
-	private JLabel getLblPreisGesamtAnzeigen()
+	protected JLabel getLblPreisGesamtAnzeigen()
 	{
 		if (lblPreisGesamtAnzeigen == null)
 		{
@@ -210,7 +210,7 @@ public class PizzaGUI
 		return lblPreisGesamtAnzeigen;
 	}
 
-	private JList getList()
+	protected JList getList()
 	{
 		if (list == null)
 		{

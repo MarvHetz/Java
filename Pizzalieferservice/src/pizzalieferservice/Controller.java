@@ -29,9 +29,9 @@ public class Controller
 		warenkorbDefaultListModel.clear();
 	}
 
-	public void enfernen(Warenkorrb zuEntfernen)
+	public void enfernen(Warenkorb zuEntfernen)
 	{
-		warenkorbDefaultListModel.remove(zuEntfernen);
+		warenkorbDefaultListModel.removeElement(zuEntfernen);
 	}
 
 	public DefaultListModel<Warenkorb> getWarenkorbDefaultListModel()
@@ -42,6 +42,6 @@ public class Controller
 	public void hinzufuegen(Pizza pizza, Extras extras, Groesse groesse)
 	{
 		double preis = berechnePreis(pizza, extras, groesse);
-		warenkorbDefaultListModel.add(new Warenkorb(pizza, groesse, extras, preis));
+		warenkorbDefaultListModel.addElement(new Warenkorb(pizza, groesse, extras, preis));
 	}
 }
