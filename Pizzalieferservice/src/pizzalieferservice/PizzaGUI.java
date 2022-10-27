@@ -14,22 +14,17 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.WindowConstants;
 
+import pizzalieferservice.klassen.Extras;
+import pizzalieferservice.klassen.Groesse;
+import pizzalieferservice.klassen.Pizza;
 import pizzalieferservice.klassen.Warenkorb;
 
 public class PizzaGUI
 {
 
-	/**
-	 * Create the application.
-	 */
-	public PizzaGUI(Controller controller)
-	{
-		this.controller = controller;
-		initialize();
-	}
-
 	// uierhowieu
 	private JButton btnAdd;
+
 	private JButton btnOrder;
 	private JButton btnRemove;
 	private JComboBox comboBoxExtras;
@@ -45,8 +40,16 @@ public class PizzaGUI
 	private JLabel lblPreisAnzeigen;
 	private JLabel lblPreisGesamt;
 	private JLabel lblPreisGesamtAnzeigen;
-
 	private JList list;
+
+	/**
+	 * Create the application.
+	 */
+	public PizzaGUI(Controller controller)
+	{
+		this.controller = controller;
+		initialize();
+	}
 
 	private JButton getBtnAdd()
 	{
@@ -252,8 +255,12 @@ public class PizzaGUI
 		frame.setVisible(true);
 	}
 
-	public void setzeModels(DefaultListModel<Warenkorb> warenkorbDefaultListModel)
+	public void setzeModels(DefaultListModel<Warenkorb> warenkorbDefaultListModel, DefaultListModel<Pizza> pizzen,
+			DefaultListModel<Extras> extras, DefaultListModel<Groesse> groessen)
 	{
 		getList().setModel(warenkorbDefaultListModel);
+		getComboBoxExtras().setModel(extras);
+		getComboBoxGroesse().setModel(groessen);
+		getComboBoxPizza().setModel(null);
 	}
 }
