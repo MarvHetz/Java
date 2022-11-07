@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,6 +12,7 @@ import javax.swing.JList;
 import javax.swing.JTextField;
 
 import tankstelle.Controller;
+import tankstelle.Sprit;
 
 public class Zapfsaeule
 {
@@ -119,5 +121,10 @@ public class Zapfsaeule
 		frame.getContentPane().add(getLblName());
 		frame.getContentPane().add(getLblPreis());
 		frame.setVisible(true);
+	}
+
+	public void setzeModel(DefaultListModel<Sprit> spritpreis)
+	{
+		getListSpritte().setModel(spritpreis);
 	}
 }

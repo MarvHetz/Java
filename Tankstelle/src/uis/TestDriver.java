@@ -38,7 +38,7 @@ public class TestDriver
 				@Override
 				public void actionPerformed(ActionEvent e)
 				{
-					new AdminGUI(controller);
+					controller.oeffneAdminGUI();
 				}
 			});
 			btnAdminGUI.setBounds(50, 50, 100, 100);

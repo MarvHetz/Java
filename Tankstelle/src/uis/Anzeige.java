@@ -2,10 +2,12 @@ package uis;
 
 import java.awt.Color;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
 import javax.swing.JList;
 
 import tankstelle.Controller;
+import tankstelle.Sprit;
 
 public class Anzeige
 {
@@ -45,5 +47,10 @@ public class Anzeige
 		frame.setBounds(100, 100, 495, 334);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
+	}
+
+	public void setzeModel(DefaultListModel<Sprit> spritpreis)
+	{
+		getList().setModel(spritpreis);
 	}
 }

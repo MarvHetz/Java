@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -11,6 +12,7 @@ import javax.swing.JList;
 import javax.swing.JTextField;
 
 import tankstelle.Controller;
+import tankstelle.Sprit;
 
 public class AdminGUI
 {
@@ -23,8 +25,8 @@ public class AdminGUI
 	private JLabel lblName;
 	private JLabel lblPreis;
 	private JList listSpritte;
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField textFieldName;
+	private JTextField textFieldPreis;
 
 	/**
 	 * Create the application.
@@ -40,13 +42,6 @@ public class AdminGUI
 		if (btnAendern == null)
 		{
 			btnAendern = new JButton("Ändern");
-			btnAendern.addActionListener(new ActionListener()
-			{
-				@Override
-				public void actionPerformed(ActionEvent e)
-				{
-				}
-			});
 			btnAendern.setBounds(331, 167, 89, 57);
 		}
 		return btnAendern;
@@ -106,7 +101,7 @@ public class AdminGUI
 		return lblPreis;
 	}
 
-	private JList getListSpritte()
+	public JList getListSpritte()
 	{
 		if (listSpritte == null)
 		{
@@ -116,26 +111,26 @@ public class AdminGUI
 		return listSpritte;
 	}
 
-	private JTextField getTextField()
+	public JTextField getTextFieldName()
 	{
-		if (textField == null)
+		if (textFieldName == null)
 		{
-			textField = new JTextField();
-			textField.setBounds(212, 22, 86, 20);
-			textField.setColumns(10);
+			textFieldName = new JTextField();
+			textFieldName.setBounds(212, 22, 86, 20);
+			textFieldName.setColumns(10);
 		}
-		return textField;
+		return textFieldName;
 	}
 
-	private JTextField getTextField_1()
+	public JTextField getTextFieldPreis()
 	{
-		if (textField_1 == null)
+		if (textFieldPreis == null)
 		{
-			textField_1 = new JTextField();
-			textField_1.setBounds(212, 57, 86, 20);
-			textField_1.setColumns(10);
+			textFieldPreis = new JTextField();
+			textFieldPreis.setBounds(212, 57, 86, 20);
+			textFieldPreis.setColumns(10);
 		}
-		return textField_1;
+		return textFieldPreis;
 	}
 
 	/**
@@ -152,10 +147,20 @@ public class AdminGUI
 		frame.getContentPane().add(getBtnHinzufuegen());
 		frame.getContentPane().add(getBtnAendern());
 		frame.getContentPane().add(getBtnLoeschen());
-		frame.getContentPane().add(getTextField());
-		frame.getContentPane().add(getTextField_1());
+		frame.getContentPane().add(getTextFieldName());
+		frame.getContentPane().add(getTextFieldPreis());
 		frame.getContentPane().add(getLblName());
 		frame.getContentPane().add(getLblPreis());
 		frame.setVisible(true);
+	}
+
+	public void setzeActionListener(ActionListener aenderActionListener)
+	{
+		getBtnAendern().addActionListener(aenderActionListener);
+	}
+
+	public void setzeModel(DefaultListModel<Sprit> spritpreis)
+	{
+		getListSpritte().setModel(spritpreis);
 	}
 }
