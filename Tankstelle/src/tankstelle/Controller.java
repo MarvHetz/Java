@@ -21,4 +21,9 @@ public class Controller
 	{
 		sprittpreise.addElement(new Sprit(name, preis));
 	}
+
+	public double tanken(int menge, Sprit sprit)
+	{
+		return menge * sprit.getPreis();
+	}
 }
