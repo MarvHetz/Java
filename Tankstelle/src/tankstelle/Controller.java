@@ -14,11 +14,8 @@ import uis.Zapfsaeule;
 public class Controller
 {
 	private AdminGUI adminGUI;
-	private ActionListener aendernActionListener;
 	private Anzeige anzeige;
 	private HandyApp handyApp;
-	private ActionListener hinzufuegenActionListener;
-	private ActionListener loeschenActionListener;
 	private DefaultListModel<Sprit> sprittpreise;
 
 	private Zapfsaeule zapfsaeule;
@@ -34,34 +31,9 @@ public class Controller
 		sprit.setPreis(preis);
 	}
 
-	public void aendernAnlegen(GUI gui)
-	{
-		aendernActionListener = new ActionListener()
-		{
-
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				aendern(gui.getSprit(), gui.getSpritName(), gui.getPreis());
-			}
-		};
-	}
-
 	public void hinzufuegen(String name, double preis)
 	{
 		sprittpreise.addElement(new Sprit(name, preis));
-	}
-
-	public void hinzufuegenAnlegen(GUI gui)
-	{
-		hinzufuegenActionListener = new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				hinzufuegen(gui.getSpritName(), gui.getPreis());
-			}
-		};
 	}
 
 	public void loeschen(Sprit zuloeschen)
@@ -69,27 +41,12 @@ public class Controller
 		sprittpreise.removeElement(zuloeschen);
 	}
 
-	public void loeschenAnlegen(GUI gui)
-	{
-		loeschenActionListener = new ActionListener()
-		{
-
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				loeschen(gui.getSprit());
-			}
-		};
-	}
-
 	public void oeffneAdminGUI()
 	{
 		adminGUI = new AdminGUI(this);
 		adminGUI.setzeModel(sprittpreise);
-		aendernAnlegen(adminGUI);
-		hinzufuegenAnlegen(adminGUI);
-		loeschenAnlegen(adminGUI);
-		adminGUI.setzeActionListener(aendernActionListener, hinzufuegenActionListener, loeschenActionListener);
+		adminGUI.setzeActionListener(new aendernActionListener(adminGUI), new hinzufuegenActionListener(adminGUI),
+				new loeschenActionListener(adminGUI));
 	}
 
 	public void oeffneAnzeige()
@@ -115,4 +72,51 @@ public class Controller
 		return menge * sprit.getPreis();
 	}
 
+	class aendernActionListener implements ActionListener
+	{
+		private GUI gui;
+
+		public aendernActionListener(GUI gui)
+		{
+			this.gui = gui;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			aendern(gui.getSprit(), gui.getSpritName(), gui.getPreis());
+		}
+	}
+
+	class hinzufuegenActionListener implements ActionListener
+	{
+		private GUI gui;
+
+		public hinzufuegenActionListener(GUI gui)
+		{
+			this.gui = gui;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			hinzufuegen(gui.getSpritName(), gui.getPreis());
+		}
+	}
+
+	class loeschenActionListener implements ActionListener
+	{
+		private GUI gui;
+
+		public loeschenActionListener(GUI gui)
+		{
+			this.gui = gui;
+		}
+
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			loeschen(gui.getSprit());
+		}
+	}
 }

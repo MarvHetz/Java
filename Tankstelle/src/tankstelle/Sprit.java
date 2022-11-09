@@ -35,7 +35,7 @@ public class Sprit
 	@Override
 	public String toString()
 	{
-		return name + ": " + preis;
+		return name + ": " + preis + "€";
 	}
 
 }
