@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 import tankstelle.Controller;
 import tankstelle.Sprit;
 
-public class AdminGUI
+public class AdminGUI extends GUI
 {
 
 	private JButton btnAendern;
@@ -111,6 +111,24 @@ public class AdminGUI
 		return listSpritte;
 	}
 
+	@Override
+	public double getPreis()
+	{
+		return Double.valueOf(getTextFieldPreis().getText());
+	}
+
+	@Override
+	public Sprit getSprit()
+	{
+		return (Sprit) getListSpritte().getSelectedValue();
+	}
+
+	@Override
+	public String getSpritName()
+	{
+		return getTextFieldName().getText();
+	}
+
 	public JTextField getTextFieldName()
 	{
 		if (textFieldName == null)
@@ -154,9 +172,9 @@ public class AdminGUI
 		frame.setVisible(true);
 	}
 
-	public void setzeActionListener(ActionListener aenderActionListener)
+	public void setzeActionListener(ActionListener aendernActionListener)
 	{
-		getBtnAendern().addActionListener(aenderActionListener);
+		getBtnAendern().addActionListener(aendernActionListener);
 	}
 
 	public void setzeModel(DefaultListModel<Sprit> spritpreis)

@@ -7,6 +7,7 @@ import javax.swing.DefaultListModel;
 
 import uis.AdminGUI;
 import uis.Anzeige;
+import uis.GUI;
 import uis.HandyApp;
 import uis.Zapfsaeule;
 
@@ -23,7 +24,6 @@ public class Controller
 	public Controller()
 	{
 		sprittpreise = new DefaultListModel<>();
-		aendernAnlegen();
 	}
 
 	public void aendern(Sprit sprit, String name, double preis)
@@ -32,7 +32,7 @@ public class Controller
 		sprit.setPreis(preis);
 	}
 
-	public void aendernAnlegen()
+	public void aendernAnlegen(GUI gui)
 	{
 		aendernActionListener = new ActionListener()
 		{
@@ -40,8 +40,7 @@ public class Controller
 			@Override
 			public void actionPerformed(ActionEvent e)
 			{
-				aendern((Sprit) adminGUI.getListSpritte().getSelectedValue(), adminGUI.getTextFieldName().getText(),
-						Double.valueOf(adminGUI.getTextFieldPreis().getText()));
+				aendern(gui.getSprit(), gui.getSpritName(), gui.getPreis());
 			}
 		};
 	}
@@ -55,6 +54,7 @@ public class Controller
 	{
 		adminGUI = new AdminGUI(this);
 		adminGUI.setzeModel(sprittpreise);
+		aendernAnlegen(adminGUI);
 		adminGUI.setzeActionListener(aendernActionListener);
 	}
 
