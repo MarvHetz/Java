@@ -1,7 +1,6 @@
 package uis;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
@@ -52,13 +51,6 @@ public class AdminGUI extends GUI
 		if (btnHinzufuegen == null)
 		{
 			btnHinzufuegen = new JButton("Hinzufügen");
-			btnHinzufuegen.addActionListener(new ActionListener()
-			{
-				@Override
-				public void actionPerformed(ActionEvent e)
-				{
-				}
-			});
 			btnHinzufuegen.setBounds(331, 99, 89, 57);
 		}
 		return btnHinzufuegen;
@@ -69,13 +61,6 @@ public class AdminGUI extends GUI
 		if (btnLoeschen == null)
 		{
 			btnLoeschen = new JButton("Löschen");
-			btnLoeschen.addActionListener(new ActionListener()
-			{
-				@Override
-				public void actionPerformed(ActionEvent e)
-				{
-				}
-			});
 			btnLoeschen.setBounds(331, 234, 89, 57);
 		}
 		return btnLoeschen;
@@ -172,9 +157,12 @@ public class AdminGUI extends GUI
 		frame.setVisible(true);
 	}
 
-	public void setzeActionListener(ActionListener aendernActionListener)
+	public void setzeActionListener(ActionListener aendernActionListener, ActionListener hinzufuegenActionListener,
+			ActionListener loeschenActionListener)
 	{
 		getBtnAendern().addActionListener(aendernActionListener);
+		getBtnHinzufuegen().addActionListener(hinzufuegenActionListener);
+		getBtnLoeschen().addActionListener(loeschenActionListener);
 	}
 
 	public void setzeModel(DefaultListModel<Sprit> spritpreis)

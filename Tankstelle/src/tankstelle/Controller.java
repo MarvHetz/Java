@@ -17,6 +17,8 @@ public class Controller
 	private ActionListener aendernActionListener;
 	private Anzeige anzeige;
 	private HandyApp handyApp;
+	private ActionListener hinzufuegenActionListener;
+	private ActionListener loeschenActionListener;
 	private DefaultListModel<Sprit> sprittpreise;
 
 	private Zapfsaeule zapfsaeule;
@@ -50,12 +52,44 @@ public class Controller
 		sprittpreise.addElement(new Sprit(name, preis));
 	}
 
+	public void hinzufuegenAnlegen(GUI gui)
+	{
+		hinzufuegenActionListener = new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				hinzufuegen(gui.getSpritName(), gui.getPreis());
+			}
+		};
+	}
+
+	public void loeschen(Sprit zuloeschen)
+	{
+		sprittpreise.removeElement(zuloeschen);
+	}
+
+	public void loeschenAnlegen(GUI gui)
+	{
+		loeschenActionListener = new ActionListener()
+		{
+
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				loeschen(gui.getSprit());
+			}
+		};
+	}
+
 	public void oeffneAdminGUI()
 	{
 		adminGUI = new AdminGUI(this);
 		adminGUI.setzeModel(sprittpreise);
 		aendernAnlegen(adminGUI);
-		adminGUI.setzeActionListener(aendernActionListener);
+		hinzufuegenAnlegen(adminGUI);
+		loeschenAnlegen(adminGUI);
+		adminGUI.setzeActionListener(aendernActionListener, hinzufuegenActionListener, loeschenActionListener);
 	}
 
 	public void oeffneAnzeige()
