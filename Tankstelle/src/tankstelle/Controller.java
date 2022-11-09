@@ -17,12 +17,11 @@ public class Controller
 	private Anzeige anzeige;
 	private HandyApp handyApp;
 	private DefaultListModel<Sprit> sprittpreise;
-
 	private Zapfsaeule zapfsaeule;
 
 	public Controller()
 	{
-		sprittpreise = new DefaultListModel<>();
+		sprittpreise = new DefaultListModel<Sprit>();
 	}
 
 	public void aendern(Sprit sprit, String name, double preis)
