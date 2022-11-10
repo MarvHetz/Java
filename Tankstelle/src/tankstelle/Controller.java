@@ -50,7 +50,7 @@ public class Controller
 
 	public void oeffneAnzeige()
 	{
-		anzeige = new Anzeige(this);
+		anzeige = new Anzeige();
 		anzeige.setzeModel(sprittpreise);
 	}
 

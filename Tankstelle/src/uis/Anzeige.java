@@ -19,10 +19,14 @@ public class Anzeige
 	/**
 	 * Create the application.
 	 */
-	public Anzeige(Controller controller)
+	public Anzeige()
 	{
-		this.controller = controller;
 		initialize();
+	}
+
+	public void setzeModel(DefaultListModel<Sprit> sprittpreise)
+	{
+		getList().setModel(sprittpreise);
 	}
 
 	private JList getList()
@@ -47,10 +51,5 @@ public class Anzeige
 		frame.setBounds(100, 100, 495, 334);
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
-	}
-
-	public void setzeModel(DefaultListModel<Sprit> spritpreis)
-	{
-		getList().setModel(spritpreis);
 	}
 }

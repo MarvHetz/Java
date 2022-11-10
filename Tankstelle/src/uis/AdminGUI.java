@@ -36,56 +36,6 @@ public class AdminGUI extends GUI
 		initialize();
 	}
 
-	private JButton getBtnAendern()
-	{
-		if (btnAendern == null)
-		{
-			btnAendern = new JButton("Ändern");
-			btnAendern.setBounds(331, 167, 89, 57);
-		}
-		return btnAendern;
-	}
-
-	private JButton getBtnHinzufuegen()
-	{
-		if (btnHinzufuegen == null)
-		{
-			btnHinzufuegen = new JButton("Hinzufügen");
-			btnHinzufuegen.setBounds(331, 99, 89, 57);
-		}
-		return btnHinzufuegen;
-	}
-
-	private JButton getBtnLoeschen()
-	{
-		if (btnLoeschen == null)
-		{
-			btnLoeschen = new JButton("Löschen");
-			btnLoeschen.setBounds(331, 234, 89, 57);
-		}
-		return btnLoeschen;
-	}
-
-	private JLabel getLblName()
-	{
-		if (lblName == null)
-		{
-			lblName = new JLabel("Name:");
-			lblName.setBounds(142, 28, 46, 14);
-		}
-		return lblName;
-	}
-
-	private JLabel getLblPreis()
-	{
-		if (lblPreis == null)
-		{
-			lblPreis = new JLabel("Preis:");
-			lblPreis.setBounds(142, 63, 46, 14);
-		}
-		return lblPreis;
-	}
-
 	public JList getListSpritte()
 	{
 		if (listSpritte == null)
@@ -136,6 +86,69 @@ public class AdminGUI extends GUI
 		return textFieldPreis;
 	}
 
+	public void setzeActionListener(ActionListener aendernActionListener, ActionListener hinzufuegenActionListener,
+			ActionListener loeschenActionListener)
+	{
+		getBtnAendern().addActionListener(aendernActionListener);
+		getBtnHinzufuegen().addActionListener(hinzufuegenActionListener);
+		getBtnLoeschen().addActionListener(loeschenActionListener);
+	}
+
+	public void setzeModel(DefaultListModel<Sprit> sprittpreise)
+	{
+		getListSpritte().setModel(sprittpreise);
+	}
+
+	private JButton getBtnAendern()
+	{
+		if (btnAendern == null)
+		{
+			btnAendern = new JButton("Ändern");
+			btnAendern.setBounds(331, 167, 89, 57);
+		}
+		return btnAendern;
+	}
+
+	private JButton getBtnHinzufuegen()
+	{
+		if (btnHinzufuegen == null)
+		{
+			btnHinzufuegen = new JButton("Hinzufügen");
+			btnHinzufuegen.setBounds(331, 99, 89, 57);
+		}
+		return btnHinzufuegen;
+	}
+
+	private JButton getBtnLoeschen()
+	{
+		if (btnLoeschen == null)
+		{
+			btnLoeschen = new JButton("Löschen");
+			btnLoeschen.setBounds(331, 234, 89, 57);
+		}
+		return btnLoeschen;
+	}
+
+	private JLabel getLblName()
+	{
+		if (lblName == null)
+		{
+			lblName = new JLabel("Name:");
+			lblName.setBounds(142, 28, 46, 14);
+		}
+		return lblName;
+	}
+
+	private JLabel getLblPreis()
+	{
+		if (lblPreis == null)
+		{
+			lblPreis = new JLabel("Preis:");
+			lblPreis.setBounds(142, 63, 46, 14);
+		}
+		return lblPreis;
+	}
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
@@ -155,18 +168,5 @@ public class AdminGUI extends GUI
 		frame.getContentPane().add(getLblName());
 		frame.getContentPane().add(getLblPreis());
 		frame.setVisible(true);
-	}
-
-	public void setzeActionListener(ActionListener aendernActionListener, ActionListener hinzufuegenActionListener,
-			ActionListener loeschenActionListener)
-	{
-		getBtnAendern().addActionListener(aendernActionListener);
-		getBtnHinzufuegen().addActionListener(hinzufuegenActionListener);
-		getBtnLoeschen().addActionListener(loeschenActionListener);
-	}
-
-	public void setzeModel(DefaultListModel<Sprit> spritpreis)
-	{
-		getListSpritte().setModel(spritpreis);
 	}
 }

@@ -56,7 +56,7 @@ public class TestDriver
 				@Override
 				public void actionPerformed(ActionEvent e)
 				{
-					new Anzeige(controller);
+					controller.oeffneAnzeige();
 				}
 			});
 			btnAnzeige.setBounds(50, 180, 100, 100);
@@ -74,7 +74,7 @@ public class TestDriver
 				@Override
 				public void actionPerformed(ActionEvent e)
 				{
-					new HandyApp(controller);
+					controller.oeffneHandyApp();
 				}
 			});
 			btnHandyApp.setBounds(238, 50, 100, 100);
@@ -92,7 +92,7 @@ public class TestDriver
 				@Override
 				public void actionPerformed(ActionEvent e)
 				{
-					new Zapfsaeule(controller);
+					controller.oeffneZapfsaeule();
 				}
 			});
 			btnZapfsaeule.setBounds(238, 180, 100, 100);
