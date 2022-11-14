@@ -19,4 +19,10 @@ public class Warenkorb
 		this.extras = extras;
 		this.preis = preis;
 	}
+
+	@Override
+	public String toString()
+	{
+		return pizza.toString();
+	}
 }

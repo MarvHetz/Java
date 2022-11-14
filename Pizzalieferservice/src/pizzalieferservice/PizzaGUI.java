@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -51,6 +52,18 @@ public class PizzaGUI
 		initialize();
 	}
 
+	public void setzeModels(DefaultListModel<Warenkorb> warenkorbDefaultListModel, Pizza[] pizzen, Extras[] extras,
+			Groesse[] groessen)
+	{
+		getList().setModel(warenkorbDefaultListModel);
+		DefaultComboBoxModel comboBoxModelExtras = new DefaultComboBoxModel<>(extras);
+		DefaultComboBoxModel comboBoxModelGroessen = new DefaultComboBoxModel<>(groessen);
+		DefaultComboBoxModel comboBoxModelPizzen = new DefaultComboBoxModel<>(pizzen);
+		getComboBoxExtras().setModel(comboBoxModelExtras);
+		getComboBoxGroesse().setModel(comboBoxModelGroessen);
+		getComboBoxPizza().setModel(comboBoxModelPizzen);
+	}
+
 	private JButton getBtnAdd()
 	{
 		if (btnAdd == null)
@@ -62,7 +75,10 @@ public class PizzaGUI
 				@Override
 				public void actionPerformed(ActionEvent e)
 				{
-
+					Pizza pizza = (Pizza) comboBoxPizza.getSelectedItem();
+					Groesse groesse = (Groesse) comboBoxGroesse.getSelectedItem();
+					Extras extras = (Extras) comboBoxExtras.getSelectedItem();
+					controller.hinzufuegen(pizza, extras, groesse);
 				}
 
 			});
@@ -71,11 +87,47 @@ public class PizzaGUI
 		return btnAdd;
 	}
 
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize()
+	{
+		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(192, 192, 192));
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		frame.getContentPane().add(getLblPizza());
+		frame.getContentPane().add(getLblGroesse());
+		frame.getContentPane().add(getLblExtras());
+		frame.getContentPane().add(getLblPreisAnzeigen());
+		frame.getContentPane().add(getLblPreis());
+		frame.getContentPane().add(getBtnAdd());
+		frame.getContentPane().add(getBtnRemove());
+		frame.getContentPane().add(getBtnOrder());
+		frame.getContentPane().add(getLblPreisGesamtAnzeigen());
+		frame.getContentPane().add(getLblPreisGesamt());
+		frame.getContentPane().add(getComboBoxPizza());
+		frame.getContentPane().add(getComboBoxExtras());
+		frame.getContentPane().add(getComboBoxGroesse());
+		frame.getContentPane().add(getList());
+		frame.getContentPane().add(getLblFehler());
+		frame.setVisible(true);
+	}
+
 	protected JButton getBtnOrder()
 	{
 		if (btnOrder == null)
 		{
 			btnOrder = new JButton("Bestellen");
+			btnOrder.addActionListener(new ActionListener()
+			{
+				@Override
+				public void actionPerformed(ActionEvent e)
+				{
+					controller.bestellen();
+				}
+			});
 			btnOrder.setBounds(335, 172, 89, 51);
 		}
 		return btnOrder;
@@ -225,42 +277,5 @@ public class PizzaGUI
 			list.setBounds(10, 84, 315, 125);
 		}
 		return list;
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	private void initialize()
-	{
-		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(192, 192, 192));
-		frame.setBounds(100, 100, 450, 300);
-		frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-		frame.getContentPane().setLayout(null);
-		frame.getContentPane().add(getLblPizza());
-		frame.getContentPane().add(getLblGroesse());
-		frame.getContentPane().add(getLblExtras());
-		frame.getContentPane().add(getLblPreisAnzeigen());
-		frame.getContentPane().add(getLblPreis());
-		frame.getContentPane().add(getBtnAdd());
-		frame.getContentPane().add(getBtnRemove());
-		frame.getContentPane().add(getBtnOrder());
-		frame.getContentPane().add(getLblPreisGesamtAnzeigen());
-		frame.getContentPane().add(getLblPreisGesamt());
-		frame.getContentPane().add(getComboBoxPizza());
-		frame.getContentPane().add(getComboBoxExtras());
-		frame.getContentPane().add(getComboBoxGroesse());
-		frame.getContentPane().add(getList());
-		frame.getContentPane().add(getLblFehler());
-		frame.setVisible(true);
-	}
-
-	public void setzeModels(DefaultListModel<Warenkorb> warenkorbDefaultListModel, DefaultListModel<Pizza> pizzen,
-			DefaultListModel<Extras> extras, DefaultListModel<Groesse> groessen)
-	{
-		getList().setModel(warenkorbDefaultListModel);
-		getComboBoxExtras().setModel(extras);
-		getComboBoxGroesse().setModel(groessen);
-		getComboBoxPizza().setModel(null);
 	}
 }
