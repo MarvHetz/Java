@@ -36,4 +36,30 @@ public class DateiHandler
 			e.printStackTrace();
 		}
 	}
+
+	public ArrayList<String> lesen()
+	{
+		String zeileString;
+		try
+		{
+			while ((zeileString = reader.readLine()) != null)
+			{
+				stringList.add(zeileString);
+			}
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		} finally
+		{
+			try
+			{
+				reader.close();
+			} catch (IOException e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+		return stringList;
+	}
 }
