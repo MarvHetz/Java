@@ -1,4 +1,5 @@
 import java.awt.Font;
+import java.awt.event.ActionListener;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -141,7 +142,13 @@ public class GUI
 		return textKundenName;
 	}
 
-	protected void setList(DefaultListModel listeWare, DefaultListModel listeWarenkorb)
+	protected void setActionListener(ActionListener links, ActionListener rechts)
+	{
+		getButtonNachLinks().addActionListener(links);
+		getButtonNachRechts().addActionListener(rechts);
+	}
+
+	protected void setList(DefaultListModel<Ware> listeWare, DefaultListModel<Ware> listeWarenkorb)
 	{
 		getListWare().setModel(listeWare);
 		getListWarenkorb().setModel(listeWarenkorb);

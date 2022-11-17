@@ -14,6 +14,19 @@ public class Controller
 		this.gui = gui;
 		warenDefaultListModel = new DefaultListModel<>();
 		warenKorbDefaultListModel = new DefaultListModel<>();
+		gui.setActionListener(new ActionListenerBtnNachLinks(), new ActionListenerBtnNachRechts());
+		gui.setList(warenDefaultListModel, warenKorbDefaultListModel);
+	}
+
+	class ActionListenerBtnNachLinks implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			Ware zuVerschiebenWare = (Ware) gui.getListWarenkorb().getSelectedValue();
+			warenDefaultListModel.addElement(zuVerschiebenWare);
+			warenKorbDefaultListModel.removeElement(zuVerschiebenWare);
+		}
 	}
 
 	class ActionListenerBtnNachRechts implements ActionListener
@@ -21,7 +34,9 @@ public class Controller
 		@Override
 		public void actionPerformed(ActionEvent e)
 		{
-
+			Ware zuVerschiebenWare = (Ware) gui.getListWare().getSelectedValue();
+			warenDefaultListModel.removeElement(zuVerschiebenWare);
+			warenKorbDefaultListModel.addElement(zuVerschiebenWare);
 		}
 	}
 }
