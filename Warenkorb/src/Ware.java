@@ -12,4 +12,10 @@ public class Ware
 		this.artikelNummer = artikelNummer;
 		this.preis = preis;
 	}
+
+	@Override
+	public String toString()
+	{
+		return artikelBezeichnung + " " + preis;
+	}
 }

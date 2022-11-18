@@ -1,10 +1,5 @@
 package pizzalieferservice;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 import javax.swing.DefaultListModel;
 
 import pizzalieferservice.klassen.Extras;
@@ -14,17 +9,13 @@ import pizzalieferservice.klassen.Warenkorb;
 
 public class Controller
 {
-	private Extras[] extras =
-	{ new Extras("Salami", 0.6), new Extras("Extra Mozzerella", 1.1), new Extras("Schinken", 0.7),
-			new Extras("Chicken", 1.5) };
+	private DefaultListModel<Extras> extras = new DefaultListModel<>();
 
 	private double gesamtpreis = 0;
 
-	private Groesse[] groessen =
-	{ new Groesse("Small", -1.7), new Groesse("Normall", 0.0), new Groesse("Big", 1.8), new Groesse("Grande", 3.5) };
+	private DefaultListModel<Groesse> groessen = new DefaultListModel<>();
 
-	private Pizza[] pizzen =
-	{ new Pizza("Salami", 6.50), new Pizza("Schinken", 6.7), new Pizza("Hawai", 7.5) };
+	private DefaultListModel<Pizza> pizzen = new DefaultListModel<>();
 
 	private PizzaGUI view;
 	private DefaultListModel<Warenkorb> warenkorbDefaultListModel;
@@ -34,34 +25,15 @@ public class Controller
 		warenkorbDefaultListModel = new DefaultListModel();
 		view = new PizzaGUI(this);
 		view.setzeModels(warenkorbDefaultListModel, pizzen, extras, groessen);
+
+		einspeichernExtras();
+		einspeichernGroessen();
+		einspeichernPizzen();
 	}
 
-	public void bestellen()
+	private double berechnePreis(Pizza pizza, Extras extras, Groesse groesse)
 	{
-		try
-		{
-			File bestellung = new File("Bestellung.txt");
-			BufferedWriter bWriter = new BufferedWriter(new FileWriter(bestellung, false));
-			try
-			{
-				for (int i = 0; i < warenkorbDefaultListModel.size(); i++)
-				{
-
-					bWriter.write((warenkorbDefaultListModel.getElementAt(i)).toString());
-					bWriter.newLine();
-				}
-
-			} catch (Exception e)
-			{
-				System.out.println(e.getMessage());
-			} finally
-			{
-				bWriter.close();
-			}
-		} catch (IOException e)
-		{
-			System.out.println(e.getMessage());
-		}
+		return pizza.getPreis() + extras.getPreis() + groesse.getPreis();
 	}
 
 	public void clearList()
@@ -69,22 +41,45 @@ public class Controller
 		warenkorbDefaultListModel.clear();
 	}
 
+	private void einspeichernExtras()
+	{
+		extras.addElement(new Extras("Salami", 0.6));
+		extras.addElement(new Extras("Extra Mozzerella", 1.1));
+		extras.addElement(new Extras("Schinken", 0.7));
+		extras.addElement(new Extras("Chicken", 1.5));
+	}
+
+	private void einspeichernGroessen()
+	{
+		groessen.addElement(new Groesse("Small", -1.7));
+		groessen.addElement(new Groesse("Normall", 0.0));
+		groessen.addElement(new Groesse("Big", 1.8));
+		groessen.addElement(new Groesse("Grande", 3.5));
+	}
+
+	private void einspeichernPizzen()
+	{
+		pizzen.addElement(new Pizza("Salami", 6.50));
+		pizzen.addElement(new Pizza("Schinken", 6.7));
+		pizzen.addElement(new Pizza("Hawai", 7.5));
+	}
+
 	public void enfernen(Warenkorb zuEntfernen)
 	{
 		warenkorbDefaultListModel.removeElement(zuEntfernen);
 	}
 
-	public Extras[] getExtras()
+	public DefaultListModel<Extras> getExtras()
 	{
 		return extras;
 	}
 
-	public Groesse[] getGroessen()
+	public DefaultListModel<Groesse> getGroessen()
 	{
 		return groessen;
 	}
 
-	public Pizza[] getPizzen()
+	public DefaultListModel<Pizza> getPizzen()
 	{
 		return pizzen;
 	}
@@ -98,10 +93,5 @@ public class Controller
 	{
 		double preis = berechnePreis(pizza, extras, groesse);
 		warenkorbDefaultListModel.addElement(new Warenkorb(pizza, groesse, extras, preis));
-	}
-
-	private double berechnePreis(Pizza pizza, Extras extras, Groesse groesse)
-	{
-		return pizza.getPreis() + extras.getPreis() + groesse.getPreis();
 	}
 }
