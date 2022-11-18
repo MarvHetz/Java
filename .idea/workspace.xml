@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FPA1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pizzalieferservice.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tankstelle.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Warenkorb/src/Artikeldatei.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pizzalieferservice/src/pizzalieferservice/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzalieferservice/src/pizzalieferservice/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Warenkorb/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Warenkorb/src/Ware.java" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb/src/Ware.java" afterDir="false" />
-    </list>
+    <list default="true" id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="lesenDatei als Funktionin den Controller hinzugefuegt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,8 +55,16 @@
       <option name="presentableId" value="Default" />
       <updated>1668778753160</updated>
       <workItem from="1668778754311" duration="463000" />
-      <workItem from="1668779229884" duration="1353000" />
+      <workItem from="1668779229884" duration="1690000" />
     </task>
+    <task id="LOCAL-00001" summary="lesenDatei als Funktionin den Controller hinzugefuegt">
+      <created>1668780896440</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668780896440</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -86,5 +80,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lesenDatei als Funktionin den Controller hinzugefuegt" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesenDatei als Funktionin den Controller hinzugefuegt" />
   </component>
 </project>
