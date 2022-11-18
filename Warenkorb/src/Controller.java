@@ -17,7 +17,7 @@ public class Controller
 		this.gui = gui;
 		warenDefaultListModel = new DefaultListModel<>();
 		warenKorbDefaultListModel = new DefaultListModel<>();
-		dh = new DateiHandler(new File("Artikeldatei.csv"));
+		dh = new DateiHandler(new File("F:\\java\\Java\\Warenkorb\\src\\Artikeldatei.csv"));
 		lesenDatei();
 		gui.setActionListener(new ActionListenerBtnNachLinks(), new ActionListenerBtnNachRechts());
 		gui.setList(warenDefaultListModel, warenKorbDefaultListModel);

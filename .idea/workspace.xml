@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="lesenDatei als Funktionin den Controller hinzugefuegt" />
+    <list default="true" id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="lesenDatei als Funktionin den Controller hinzugefuegt">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Warenkorb/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb/src/Controller.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,6 +59,7 @@
       <updated>1668778753160</updated>
       <workItem from="1668778754311" duration="463000" />
       <workItem from="1668779229884" duration="1967000" />
+      <workItem from="1668781269294" duration="592000" />
     </task>
     <task id="LOCAL-00001" summary="lesenDatei als Funktionin den Controller hinzugefuegt">
       <created>1668780896440</created>
