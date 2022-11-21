@@ -57,4 +57,23 @@ public class Controller
 			warenKorbDefaultListModel.addElement(zuVerschiebenWare);
 		}
 	}
+
+	private ArrayList<String> umwandeln(DefaultListModel<Ware> waren)
+	{
+		ArrayList<String> stringList = new ArrayList<>();
+		for (int i = 0; i < waren.getSize(); i++)
+		{
+			stringList.add(waren.get(i).toStringForFile());
+		}
+		return stringList;
+	}
+	class ActionListenerBestellen implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e)
+		{
+			dh = new DateiHandler(new File(gui.getTextKundenName().getText() + ".csv"));
+			dh.schreiben(umwandeln(warenKorbDefaultListModel));
+		}
+	}
 }

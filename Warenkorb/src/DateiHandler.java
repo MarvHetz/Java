@@ -85,7 +85,6 @@ public class DateiHandler
 
     private void lesenFile()
     {
-
         try
         {
             reader = new BufferedReader(new FileReader(file));
@@ -103,7 +102,6 @@ public class DateiHandler
         {
             reader = Files.newBufferedReader(path);
             lesenDatei();
-
         }
         catch (IOException e)
         {
