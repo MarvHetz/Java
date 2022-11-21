@@ -3,9 +3,9 @@ public class Ware
 {
 	private String artikelBezeichnung;
 	private int artikelNummer;
-	private double preis;
+	private String preis;
 
-	public Ware(String artikelBezeichnung, int artikelNummer, double preis)
+	public Ware(String artikelBezeichnung, int artikelNummer, String preis)
 	{
 		super();
 		this.artikelBezeichnung = artikelBezeichnung;
@@ -17,5 +17,10 @@ public class Ware
 	public String toString()
 	{
 		return artikelBezeichnung + " " + preis;
+	}
+
+	public String toStringForFile()
+	{
+		return Integer.toString(artikelNummer) + ";" + artikelBezeichnung + ";" + preis + ";";
 	}
 }

@@ -142,10 +142,11 @@ public class GUI
 		return textKundenName;
 	}
 
-	protected void setActionListener(ActionListener links, ActionListener rechts)
+	protected void setActionListener(ActionListener links, ActionListener rechts, ActionListener bestellen)
 	{
 		getButtonNachLinks().addActionListener(links);
 		getButtonNachRechts().addActionListener(rechts);
+		getButtonBestellen().addActionListener(bestellen);
 	}
 
 	protected void setList(DefaultListModel<Ware> listeWare, DefaultListModel<Ware> listeWarenkorb)
