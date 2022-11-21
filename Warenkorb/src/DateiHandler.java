@@ -16,6 +16,7 @@ public class DateiHandler
     ArrayList<String> stringList;
     BufferedWriter writer;
 
+
     public DateiHandler(File f)
     {
         stringList = new ArrayList<>();

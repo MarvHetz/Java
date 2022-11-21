@@ -12,6 +12,7 @@ public class Controller
 	DefaultListModel<Ware> warenKorbDefaultListModel;
 	DateiHandler dh;
 
+
 	public Controller(GUI gui)
 	{
 		this.gui = gui;
