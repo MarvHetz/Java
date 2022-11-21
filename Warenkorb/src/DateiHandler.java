@@ -139,6 +139,18 @@ public class DateiHandler
 		{
 			e.printStackTrace();
 		}
+		finally
+		{
+			try
+			{
+				writer.close();
+			}
+			catch (IOException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 
 	private void schreibenPath(ArrayList<String> stringList)
@@ -151,6 +163,17 @@ public class DateiHandler
 		catch (IOException e)
 		{
 			e.printStackTrace();
+		}
+		finally
+		{
+			try
+			{
+				writer.close();
+			}
+			catch (IOException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
 }
