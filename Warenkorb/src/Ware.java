@@ -18,4 +18,9 @@ public class Ware
 	{
 		return artikelBezeichnung + " " + preis;
 	}
+
+	public String toStringForFile()
+	{
+		return Integer.toString(artikelNummer) + ";" + artikelBezeichnung + ";" + preis + ";";
+	}
 }

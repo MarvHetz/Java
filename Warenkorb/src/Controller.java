@@ -30,7 +30,7 @@ public class Controller
 		for(int i = 0; i < dateiStrings.size(); i++)
 		{
 			zuVerarbeiten = dateiStrings.get(i);
-			warenDefaultListModel.addElement(new Ware((String) zuVerarbeiten.split(";")[1],Integer.valueOf((String) zuVerarbeiten.split(";")[0]),(String) zuVerarbeiten.split(";")[2]));
+			warenDefaultListModel.addElement(new Ware((String) zuVerarbeiten.split(";")[1],Integer.valueOf((String) zuVerarbeiten.split(";")[0]),Integer.valueOf(zuVerarbeiten.split(";")[2])));
 		}
 
 	}
