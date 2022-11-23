@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 
+import autohaus.DateiHandler;
+
 public class Controller
 {
 	DateiHandler dh;
