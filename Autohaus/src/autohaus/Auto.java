@@ -1,29 +1,29 @@
 package autohaus;
 
-import javax.swing.DefaultComboBoxModel;
+import java.util.ArrayList;
 
 public class Auto
 {
-	private DefaultComboBoxModel<Farbe> farben;
+	private ArrayList<Farbe> farben;
 
 	private String name;
 
-	private DefaultComboBoxModel<PS> ps;
+	private ArrayList<PS> ps;
 
 	public Auto(String name)
 	{
 		super();
-		this.farben = new DefaultComboBoxModel<>();
+		this.farben = new ArrayList<>();
 		this.name = name;
-		this.ps = new DefaultComboBoxModel<>();
+		this.ps = new ArrayList<>();
 	}
 
-	public DefaultComboBoxModel<Farbe> getFarben()
+	public ArrayList<Farbe> getFarben()
 	{
 		return farben;
 	}
 
-	public DefaultComboBoxModel<PS> getPs()
+	public ArrayList<PS> getPs()
 	{
 		return ps;
 	}

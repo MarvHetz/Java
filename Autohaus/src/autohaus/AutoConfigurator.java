@@ -2,6 +2,7 @@ package autohaus;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
@@ -49,8 +50,8 @@ public class AutoConfigurator
 	public void setzeComboBoxModels(DefaultComboBoxModel<Auto> autos)
 	{
 		comboBoxModell.setModel(autos);
-		comboBoxFarbe.setModel(autos.getElementAt(0).getFarben());
-		comboBoxPs.setModel(autos.getElementAt(0).getPs());
+		comboBoxFarbe.setModel(getNewDefaultComboBoxModelFarbe(autos.getElementAt(0).getFarben()));
+		comboBoxPs.setModel(getNewDefaultComboBoxModelPS(autos.getElementAt(0).getPs()));
 	}
 
 	private void BildLaden()
@@ -287,5 +288,27 @@ public class AutoConfigurator
 		frame.getContentPane().add(getBtnBestellen());
 		frame.getContentPane().add(getPanelBild());
 		frame.setVisible(true);
+	}
+
+	public static DefaultComboBoxModel getNewDefaultComboBoxModelFarbe(ArrayList<Farbe> autos2)
+	{
+		DefaultComboBoxModel newModel = new DefaultComboBoxModel();
+
+		autos2.stream().forEach((c) -> {
+			newModel.addElement(c);
+		});
+
+		return newModel;
+	}
+
+	public static DefaultComboBoxModel getNewDefaultComboBoxModelPS(ArrayList<PS> autos2)
+	{
+		DefaultComboBoxModel newModel = new DefaultComboBoxModel();
+
+		autos2.stream().forEach((c) -> {
+			newModel.addElement(c);
+		});
+
+		return newModel;
 	}
 }
