@@ -1,6 +1,9 @@
-package autohaus;
-import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -14,16 +17,10 @@ public class DateiHandler
     BufferedWriter writer;
 
 
-    public DateiHandler(File f) {
+    public DateiHandler(File f)
+    {
         stringList = new ArrayList<>();
         this.file = f;
-        try {
-            InputStreamReader isr = new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8);
-        }
-        catch (FileNotFoundException e)
-        {
-            System.out.println("Datei nicht gefunden");
-        }
     }
 
     public DateiHandler(Path p)
