@@ -2,9 +2,10 @@ package autohaus;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Comparator;
 
 import javax.swing.DefaultComboBoxModel;
+
+import filmdatenbank.DateiHandler;
 
 public class Controller
 {
@@ -46,9 +47,7 @@ public class Controller
 		for (Auto auto : autos)
 		{
 			farbenArrayList = auto.getFarben();
-			farbenArrayList.sort(new Comparator<Farbe>()
-			{
-			});
+			// farbenArrayList.sort();
 		}
 
 		autoDefaultComboBoxModel = getNewDefaultComboBoxModel(autos);
