@@ -1,160 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="Wieder alles zurück">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Warenkorb/src/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb/src/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Warenkorb/src/DateiHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb/src/DateiHandler.java" afterDir="false" />
-    </list>
+    <list default="true" id="a2703a70-5814-41c5-b831-7940dacbd1e4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2HirTI1ziq6NzsMZojsS2ws5hGs" />
+  <component name="ProjectId" id="2IqjK6c6Wdw5Djv5xUKGioMR4at" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true"
   }
-}</component>
-  <component name="RunManager">
-    <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Start" />
-      <module name="Warenkorb" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Start" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="" />
-      <created>1668778753160</created>
+      <changelist id="a2703a70-5814-41c5-b831-7940dacbd1e4" name="Changes" comment="" />
+      <created>1670915950941</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1668778753160</updated>
-      <workItem from="1668778754311" duration="463000" />
-      <workItem from="1668779229884" duration="1967000" />
-      <workItem from="1668781269294" duration="1004000" />
-      <workItem from="1668788627809" duration="2183000" />
-      <workItem from="1668790892155" duration="654000" />
-      <workItem from="1668798637763" duration="641000" />
-      <workItem from="1669040174462" duration="762000" />
-      <workItem from="1669049589102" duration="108000" />
-      <workItem from="1669049901469" duration="534000" />
-      <workItem from="1669050502537" duration="97000" />
+      <updated>1670915950941</updated>
     </task>
-    <task id="LOCAL-00001" summary="lesenDatei als Funktionin den Controller hinzugefuegt">
-      <created>1668780896440</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1668780896440</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Lesen klappt endlich im Controller&#10;&#10;Musste leider nen Pfad angeben damit der BR die Datei findet desewegen muss ich es in java noch fixen">
-      <created>1668781929683</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1668781929683</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Den Preis zum String geaendert">
-      <created>1668789268346</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1668789268346</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Wieder alles zurück">
-      <created>1669050278851</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1669050278851</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Wieder alles zurück">
-      <created>1669050395150</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1669050395150</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ID_ORDER">
-      <list>
-        <option value="Default.Root" />
-        <option value="Default.Author" />
-        <option value="Default.Date" />
-        <option value="Default.Subject" />
-        <option value="Space.CommitStatus" />
-      </list>
-    </option>
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="lesenDatei als Funktionin den Controller hinzugefuegt" />
-    <MESSAGE value="Lesen klappt endlich im Controller&#10;&#10;Musste leider nen Pfad angeben damit der BR die Datei findet desewegen muss ich es in java noch fixen" />
-    <MESSAGE value="Den Preis zum String geaendert" />
-    <MESSAGE value="Wieder alles zurück" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wieder alles zurück" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.lang.NumberFormatException" package="java.lang" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
