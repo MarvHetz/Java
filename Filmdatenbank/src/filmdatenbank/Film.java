@@ -35,6 +35,11 @@ public class Film
 				&& Objects.equals(name, other.name);
 	}
 
+	public String getGenre()
+	{
+		return genre;
+	}
+
 	public int getId()
 	{
 		return id;
@@ -54,6 +59,11 @@ public class Film
 	public int hashCode()
 	{
 		return Objects.hash(genre, id, laenge, name);
+	}
+
+	public void setGenre(String genre)
+	{
+		this.genre = genre;
 	}
 
 	public void setId(int id)
