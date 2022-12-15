@@ -1,9 +1,12 @@
 package filmdatenbank;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class GUI
@@ -14,9 +17,10 @@ public class GUI
 	private JButton btnAufsteigend;
 	private JButton btnSuche;
 	private JButton btnZuruck;
-	private JComboBox comboBoxGenre;
+	private JComboBox comboBoxFilters;
 	private JFrame frame;
 	private JList listFilm;
+	private JPanel panelBild;
 	private JTextField textFieldSuchen;
 	Controller controller;
 
@@ -35,7 +39,7 @@ public class GUI
 		if (btnAbsteigend == null)
 		{
 			btnAbsteigend = new JButton("Absteigend");
-			btnAbsteigend.setBounds(217, 44, 130, 23);
+			btnAbsteigend.setBounds(255, 47, 130, 23);
 		}
 		return btnAbsteigend;
 	}
@@ -45,7 +49,7 @@ public class GUI
 		if (btnAufsteigend == null)
 		{
 			btnAufsteigend = new JButton("Aufsteigend");
-			btnAufsteigend.setBounds(217, 10, 130, 23);
+			btnAufsteigend.setBounds(258, 7, 130, 23);
 		}
 		return btnAufsteigend;
 	}
@@ -55,7 +59,7 @@ public class GUI
 		if (btnSuche == null)
 		{
 			btnSuche = new JButton("Suchen");
-			btnSuche.setBounds(220, 193, 127, 23);
+			btnSuche.setBounds(258, 196, 127, 23);
 		}
 		return btnSuche;
 	}
@@ -65,19 +69,19 @@ public class GUI
 		if (btnZuruck == null)
 		{
 			btnZuruck = new JButton("Zurück");
-			btnZuruck.setBounds(220, 227, 127, 23);
+			btnZuruck.setBounds(258, 230, 127, 23);
 		}
 		return btnZuruck;
 	}
 
-	public JComboBox getComboBoxGenre()
+	public JComboBox getComboBoxFilters()
 	{
-		if (comboBoxGenre == null)
+		if (comboBoxFilters == null)
 		{
-			comboBoxGenre = new JComboBox();
-			comboBoxGenre.setBounds(220, 78, 127, 22);
+			comboBoxFilters = new JComboBox();
+			comboBoxFilters.setBounds(258, 81, 127, 22);
 		}
-		return comboBoxGenre;
+		return comboBoxFilters;
 	}
 
 	public JList getListFilm()
@@ -85,9 +89,20 @@ public class GUI
 		if (listFilm == null)
 		{
 			listFilm = new JList();
-			listFilm.setBounds(10, 10, 200, 310);
+			listFilm.setBounds(10, 10, 238, 310);
 		}
 		return listFilm;
+	}
+
+	public JPanel getPanelBild()
+	{
+		if (panelBild == null)
+		{
+			panelBild = new JPanel();
+			panelBild.setBounds(425, 10, 338, 310);
+			panelBild.setLayout(new BorderLayout(0, 0));
+		}
+		return panelBild;
 	}
 
 	public JTextField getTextFieldSuchen()
@@ -95,7 +110,7 @@ public class GUI
 		if (textFieldSuchen == null)
 		{
 			textFieldSuchen = new JTextField();
-			textFieldSuchen.setBounds(220, 111, 127, 20);
+			textFieldSuchen.setBounds(258, 114, 127, 20);
 			textFieldSuchen.setColumns(10);
 		}
 		return textFieldSuchen;
@@ -107,16 +122,17 @@ public class GUI
 	private void initialize()
 	{
 		frame = new JFrame();
-		frame.setBounds(100, 100, 507, 370);
+		frame.setBounds(100, 100, 793, 370);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(getTextFieldSuchen());
 		frame.getContentPane().add(getListFilm());
 		frame.getContentPane().add(getBtnAufsteigend());
 		frame.getContentPane().add(getBtnAbsteigend());
-		frame.getContentPane().add(getComboBoxGenre());
+		frame.getContentPane().add(getComboBoxFilters());
 		frame.getContentPane().add(getBtnSuche());
 		frame.getContentPane().add(getBtnZuruck());
+		frame.getContentPane().add(getPanelBild());
 
 		frame.setVisible(true);
 	}

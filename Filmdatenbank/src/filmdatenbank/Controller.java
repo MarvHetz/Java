@@ -3,8 +3,9 @@ package filmdatenbank;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
-import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 
 public class Controller
@@ -12,7 +13,7 @@ public class Controller
 	private boolean arrayListReversed;
 	private DateiHandler dHandler;
 	private ArrayList<Film> filmeArrayList;
-	private ComboBoxModel<String> filters;
+	private DefaultComboBoxModel<eigeneComparators> filters;
 
 	private GUI gui;
 
@@ -26,7 +27,9 @@ public class Controller
 		gui = new GUI();
 		erstelleDefaultListModel(filmeArrayList);
 		setzeActionListener();
-
+		filters = new DefaultComboBoxModel<>();
+		gui.getComboBoxFilters().setModel(filters);
+		setzeFilter();
 	}
 
 	private void absteigendSotieren()
@@ -103,6 +106,19 @@ public class Controller
 			erstelleDefaultListModel(filmeArrayList);
 			gui.getTextFieldSuchen().setText(null);
 		});
+		gui.getComboBoxFilters().addItemListener(e -> {
+			Collections.sort(filmeArrayList,
+					(Comparator<Film>) (eigeneComparators) gui.getComboBoxFilters().getSelectedItem());
+			erstelleDefaultListModel(filmeArrayList);
+		});
+	}
+
+	private void setzeFilter()
+	{
+		filters.addElement(new comparatorId("ID"));
+		filters.addElement(new comparatorGenre("Genre"));
+		filters.addElement(new comparatorName("Name"));
+		filters.addElement(new comparatorLaenge("Laenge"));
 	}
 
 	private boolean vergleichenFilme(Film zuVergleichen)
@@ -116,5 +132,84 @@ public class Controller
 			}
 		}
 		return true;
+	}
+
+	private class comparatorGenre extends eigeneComparators implements Comparator<Film>
+	{
+		public comparatorGenre(String name)
+		{
+			super(name);
+		}
+
+		@Override
+		public int compare(Film f1, Film f2)
+		{
+			return f1.getGenre().compareTo(f2.getGenre());
+		}
+
+	}
+
+	private class comparatorId extends eigeneComparators implements Comparator<Film>
+	{
+		public comparatorId(String name)
+		{
+			super(name);
+		}
+
+		@Override
+		public int compare(Film f1, Film f2)
+		{
+			return Integer.compare(f1.getId(), f2.getId());
+		}
+
+	}
+
+	private class comparatorLaenge extends eigeneComparators implements Comparator<Film>
+	{
+		public comparatorLaenge(String name)
+		{
+			super(name);
+		}
+
+		@Override
+		public int compare(Film f1, Film f2)
+		{
+			return Integer.compare(f1.getLaenge(), f2.getLaenge());
+		}
+
+	}
+
+	private class comparatorName extends eigeneComparators implements Comparator<Film>
+	{
+		public comparatorName(String name)
+		{
+			super(name);
+		}
+
+		@Override
+		public int compare(Film f1, Film f2)
+		{
+			return f1.getName().compareTo(f2.getName());
+		}
+	}
+
+	private abstract class eigeneComparators implements Comparator<Film>
+	{
+		private String name;
+
+		public eigeneComparators(String name)
+		{
+			this.name = name;
+		}
+
+		@Override
+		public abstract int compare(Film f1, Film f2);
+
+		@Override
+		public String toString()
+		{
+			return name;
+		}
+
 	}
 }
