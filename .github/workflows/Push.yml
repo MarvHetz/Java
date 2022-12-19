@@ -1,0 +1,9 @@
+name: push
+on: [push]
+jobs:
+  Showing-Commits-on-Push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Liste aller Commits
+        run: 
+          ls ${{github.workspace}}
