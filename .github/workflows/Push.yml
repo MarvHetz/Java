@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Liste aller Commits
-        run: 
+        run: |
           ls ${{github.workspace}}
