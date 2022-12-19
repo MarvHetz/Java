@@ -6,4 +6,4 @@ jobs:
     steps:
       - name: Liste aller Commits
         run: |
-          ls ${{github.workspace}}
+          ls ${{ github.workspace }}
