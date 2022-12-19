@@ -4,6 +4,6 @@ jobs:
   Showing-Commits-on-Push:
     runs-on: ubuntu-latest
     steps:
-      - name: Liste aller Commits
+      - name: List all Commits
         run: |
           ls ${{ github.workspace }}
