@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import javax.swing.DefaultListModel;
 
-//Test
+//Test maven
 public class Controller
 {
 	DateiHandler dh;
