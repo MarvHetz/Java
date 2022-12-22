@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 
-import filmdatenbank.DateiHandler;
-
 public class Controller
 {
 	DefaultComboBoxModel<Auto> autoDefaultComboBoxModel;
