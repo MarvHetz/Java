@@ -5,12 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1becd11d-1c6c-4560-9b77-aa0f4dd46dbe" name="Changes" comment="Wieder alles zurück">
-      <change beforePath="$PROJECT_DIR$/JSweeper" beforeDir="false" afterPath="$PROJECT_DIR$/JSweeper" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/Mannschaft.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/mannschaften/Basketballmannschaft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/mannschaften/Fussballmannschaft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/mannschaften/Mannschaft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/spieler/Basketballspieler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/spieler/Fussballspieler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mannschaft/src/spieler/Spieler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FPA1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/FPA1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Mannschaft/.idea/Mannschaft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pizzalieferservice.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzalieferservice.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tankstelle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tankstelle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Warenkorb.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Warenkorb/src/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/Warenkorb/src/GUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -19,30 +44,53 @@
       </list>
     </option>
   </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="ProjectId" id="2HirTI1ziq6NzsMZojsS2ws5hGs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "code.cleanup.on.save": "true",
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "H:/Java/Java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Start" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Start" />
