@@ -1,15 +1,14 @@
-package mannschaften;
-
 import spieler.Spieler;
 
 import java.util.ArrayList;
 
 public class Mannschaft<T extends Spieler>
 {
-    private ArrayList<T> mannschaft;
+    private final ArrayList<T> mannschaft;
 
     public Mannschaft()
     {
+        mannschaft = new ArrayList<T>();
     }
 
     public void aufnehmen(T spieler)

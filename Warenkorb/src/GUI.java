@@ -18,6 +18,7 @@ public class GUI
     private JPanel panel;
     private JLabel lblMannschaftenLinks;
     private JLabel lblMannschaft;
+    private JLabel lblMannschaftenRechts;
 
     public GUI()
     {
